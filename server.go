@@ -2,7 +2,7 @@ package main
 
 import (
 	"practice1servergo/Database"
-	"practice1servergo/Database/Models"
+	"practice1servergo/Database/Migrations"
 	"practice1servergo/Routes/Product_routes"
 	"practice1servergo/Routes/User_routes"
 
@@ -12,7 +12,7 @@ import (
 func main() {
 
 	Database.ConnectDataBase()
-	Database.DB.AutoMigrate(&Models.Product{})
+	Migrations.MigrateAll()
 
 	// file, fileErr := os.Create("server.log")
 	// if fileErr != nil {
