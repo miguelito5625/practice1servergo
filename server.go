@@ -1,6 +1,9 @@
 package main
 
 import (
+	"io"
+	"log"
+	"os"
 	"practice1servergo/Database"
 	"practice1servergo/Database/Migrations"
 	"practice1servergo/Routes/Product_routes"
@@ -14,15 +17,13 @@ func main() {
 	Database.ConnectDataBase()
 	Migrations.MigrateAll()
 
-	// file, fileErr := os.Create("server.log")
-	// if fileErr != nil {
-	// 	fmt.Println(fileErr)
-	// 	return
-	// }
-	// gin.DefaultWriter = file
+	logfile, _ := os.Create("server.log")
+	gin.DefaultWriter = io.MultiWriter(logfile, os.Stdout)
+	log.SetOutput(gin.DefaultWriter)
 
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
+		log.Println("Welcome to API GO")
 		c.JSON(200, gin.H{
 			"message": "Hello!!!",
 		})

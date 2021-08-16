@@ -1,0 +1,15 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /user                     --> practice1servergo/Routes/User_routes.getAll (3 handlers)
+[GIN-debug] POST   /user                     --> practice1servergo/Routes/User_routes.create (3 handlers)
+[GIN-debug] GET    /product                  --> practice1servergo/Routes/Product_routes.getAll (3 handlers)
+[GIN-debug] POST   /product                  --> practice1servergo/Controllers.AddNewProduct (3 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+[GIN] 2021/08/15 - 18:24:01 | 404 |         656ns |             ::1 | GET      "/ping"
+2021/08/15 18:24:05 Welcome to API GO
+[GIN] 2021/08/15 - 18:24:05 | 200 |     302.277µs |             ::1 | GET      "/"
