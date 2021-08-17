@@ -20,5 +20,5 @@ func RespondJSON(w *gin.Context, status int, payload interface{}) {
 	//res.Meta = utils.ResponseMessage(status)
 	res.Data = payload
 
-	w.JSON(200, res)
+	w.JSON(status, res)
 }

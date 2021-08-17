@@ -33,10 +33,10 @@ func AddNewProduct(c *gin.Context) {
 	}
 }
 
-func GetOneBook(c *gin.Context) {
+func GetOneProduct(c *gin.Context) {
 	id := c.Params.ByName("id")
 	var product Models.Product
-	err := Models.GetOneBook(&product, id)
+	err := Models.GetOneProduct(&product, id)
 	if err != nil {
 		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
@@ -47,7 +47,7 @@ func GetOneBook(c *gin.Context) {
 func PutOneBook(c *gin.Context) {
 	var product Models.Product
 	id := c.Params.ByName("id")
-	err := Models.GetOneBook(&product, id)
+	err := Models.GetOneProduct(&product, id)
 	if err != nil {
 		ApiHelpers.RespondJSON(c, 404, product)
 	}

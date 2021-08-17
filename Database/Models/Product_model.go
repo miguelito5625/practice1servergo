@@ -32,7 +32,7 @@ func AddNewProduct(b *Product) (err error) {
 	return nil
 }
 
-func GetOneBook(b *Product, id string) (err error) {
+func GetOneProduct(b *Product, id string) (err error) {
 	if err := Database.DB.Where("id = ?", id).First(b).Error; err != nil {
 		return err
 	}
