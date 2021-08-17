@@ -18,7 +18,7 @@ func (b *Product) TableName() string {
 	return "product"
 }
 
-func GetAllBook(b *[]Product) (err error) {
+func GetAllProduct(b *[]Product) (err error) {
 	if err = Database.DB.Find(b).Error; err != nil {
 		return err
 	}

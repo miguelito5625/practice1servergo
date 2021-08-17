@@ -1,67 +1,72 @@
 package Controllers
 
 import (
+	"log"
 	"practice1servergo/ApiHelpers"
 	"practice1servergo/Database/Models"
 
 	"github.com/gin-gonic/gin"
 )
 
-func ListBook(c *gin.Context) {
-	var book []Models.Product
-	err := Models.GetAllBook(&book)
+func ListProduct(c *gin.Context) {
+	var product []Models.Product
+	err := Models.GetAllProduct(&product)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		log.Println("Error on list products")
+		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
-		ApiHelpers.RespondJSON(c, 200, book)
+		log.Println("Success list products")
+		ApiHelpers.RespondJSON(c, 200, product)
 	}
 }
 
 func AddNewProduct(c *gin.Context) {
-	var book Models.Product
-	c.BindJSON(&book)
-	err := Models.AddNewProduct(&book)
+	var product Models.Product
+	c.BindJSON(&product)
+	err := Models.AddNewProduct(&product)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		log.Println("Error on insert product:", product)
+		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
-		ApiHelpers.RespondJSON(c, 200, book)
+		log.Println("Success inserted product:", product)
+		ApiHelpers.RespondJSON(c, 200, product)
 	}
 }
 
 func GetOneBook(c *gin.Context) {
 	id := c.Params.ByName("id")
-	var book Models.Product
-	err := Models.GetOneBook(&book, id)
+	var product Models.Product
+	err := Models.GetOneBook(&product, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
-		ApiHelpers.RespondJSON(c, 200, book)
+		ApiHelpers.RespondJSON(c, 200, product)
 	}
 }
 
 func PutOneBook(c *gin.Context) {
-	var book Models.Product
+	var product Models.Product
 	id := c.Params.ByName("id")
-	err := Models.GetOneBook(&book, id)
+	err := Models.GetOneBook(&product, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		ApiHelpers.RespondJSON(c, 404, product)
 	}
-	c.BindJSON(&book)
-	err = Models.PutOneBook(&book, id)
+	c.BindJSON(&product)
+	err = Models.PutOneBook(&product, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
-		ApiHelpers.RespondJSON(c, 200, book)
+		ApiHelpers.RespondJSON(c, 200, product)
 	}
 }
 
 func DeleteBook(c *gin.Context) {
-	var book Models.Product
+	var product Models.Product
 	id := c.Params.ByName("id")
-	err := Models.DeleteBook(&book, id)
+	err := Models.DeleteBook(&product, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, book)
+		ApiHelpers.RespondJSON(c, 404, product)
 	} else {
-		ApiHelpers.RespondJSON(c, 200, book)
+		ApiHelpers.RespondJSON(c, 200, product)
 	}
 }

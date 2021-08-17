@@ -17,9 +17,18 @@ func main() {
 	Database.ConnectDataBase()
 	Migrations.MigrateAll()
 
+	// logfile, errFile := os.OpenFile("server.log", os.O_RDWR|os.O_APPEND, 0660)
+	// if errFile != nil {
+	// 	logfile, _ = os.Create("server.log")
+	// 	// log.Println("Error al abrir el archivo server.log")
+	// }
+
 	logfile, _ := os.Create("server.log")
+
 	gin.DefaultWriter = io.MultiWriter(logfile, os.Stdout)
 	log.SetOutput(gin.DefaultWriter)
+	log.Println("")
+	log.Println("Servidor iniciado")
 
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
