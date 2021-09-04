@@ -9,8 +9,8 @@ import (
 
 type Rol struct {
 	gorm.Model
-	Name        string `json:"rol"`
-	Description string `json:"description"`
+	Nombre      string `json:"nombre"`
+	Descripcion string `json:"descripcion"`
 }
 
 func (b *Rol) TableName() string {
