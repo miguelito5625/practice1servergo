@@ -6,8 +6,7 @@ import (
 	"os"
 	"practice1servergo/Database"
 	"practice1servergo/Database/Migrations"
-	"practice1servergo/Routes/Product_routes"
-	"practice1servergo/Routes/User_routes"
+	"practice1servergo/Systemroutes"
 
 	"github.com/gin-gonic/gin"
 )
@@ -30,14 +29,15 @@ func main() {
 	log.Println("")
 	log.Println("Servidor iniciado")
 
-	r := gin.Default()
+	r := Systemroutes.SetupRouter()
 	r.GET("/", func(c *gin.Context) {
 		log.Println("Welcome to API GO")
 		c.JSON(200, gin.H{
 			"message": "Hello!!!",
 		})
 	})
-	User_routes.Routes(r)
-	Product_routes.Routes(r)
+	// User_routes.Routes(r)
+	// Product_routes.Routes(r)
+
 	r.Run(":3000")
 }

@@ -6,5 +6,6 @@ import (
 )
 
 func MigrateAll() {
-	Database.DB.AutoMigrate(&Models.Product{})
+	Database.DB.AutoMigrate(&Models.Rol{})
+	Database.DB.AutoMigrate(&Models.User{})
 }

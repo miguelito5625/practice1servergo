@@ -1,17 +1,15 @@
-2021/08/17 17:41:33 
-2021/08/17 17:41:33 Servidor iniciado
+2021/09/04 14:38:49 
+2021/09/04 14:38:49 Servidor iniciado
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN-debug] GET    /rol                      --> practice1servergo/Controllers.ListRol (4 handlers)
+[GIN-debug] GET    /rol/:id                  --> practice1servergo/Controllers.GetOneRol (4 handlers)
+[GIN-debug] POST   /rol                      --> practice1servergo/Controllers.AddNewRol (4 handlers)
+[GIN-debug] PUT    /rol/:id                  --> practice1servergo/Controllers.PutOneRol (4 handlers)
+[GIN-debug] DELETE /rol/:id                  --> practice1servergo/Controllers.DeleteRol (4 handlers)
 [GIN-debug] GET    /                         --> main.main.func1 (3 handlers)
-[GIN-debug] GET    /user                     --> practice1servergo/Routes/User_routes.getAll (3 handlers)
-[GIN-debug] POST   /user                     --> practice1servergo/Routes/User_routes.create (3 handlers)
-[GIN-debug] GET    /product                  --> practice1servergo/Controllers.ListProduct (3 handlers)
-[GIN-debug] GET    /product/:id              --> practice1servergo/Controllers.GetOneProduct (3 handlers)
-[GIN-debug] POST   /product                  --> practice1servergo/Controllers.AddNewProduct (3 handlers)
 [GIN-debug] Listening and serving HTTP on :3000
-[GIN] 2021/08/17 - 17:41:34 | 404 |   156.00606ms |             ::1 | GET      "/product/22"
-[GIN] 2021/08/17 - 17:41:38 | 200 |  156.576473ms |             ::1 | GET      "/product/2"

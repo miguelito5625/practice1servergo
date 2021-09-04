@@ -10,13 +10,12 @@ import (
 var DB *gorm.DB
 
 func ConnectDataBase() {
-	dsn := "administrador:W1f1n3t.@tcp(34.69.200.220:3306)/fortesting?charset=utf8mb4&parseTime=True&loc=Local"
+	// dsn := "administrador:W1f1n3t.@tcp(34.69.200.220:3306)/fortesting?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "admin:Mariobross5625.@tcp(localserver3:3306)/vacunacion?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println("DATABASE CONNECT FAILED, status: ", err)
 	}
-	// Migrate the schema
-	// db.AutoMigrate(&Models.Product{})
 
 	DB = db
 
