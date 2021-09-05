@@ -10,6 +10,7 @@ func SetupRouter() *gin.Engine {
 	Rol_Routes(r)
 	Usuario_Routes(r)
 	Vacuna_Routes(r)
+	Centro_Vacunacion_Routes(r)
 
 	return r
 }
