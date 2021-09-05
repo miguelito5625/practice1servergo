@@ -13,7 +13,7 @@ type Usuario struct {
 	Nombres    string `json:"nombres"`
 	Apeliidos  string `json:"apellidos"`
 	Nacimiento string `json:"nacimiento"`
-	Clave      []byte `json:"clave"`
+	Clave      string `json:"clave"`
 	Rol_id     int    `json:"rol_id"`
 	Rol        Rol    `gorm:"foreignkey:Rol_id"`
 }
@@ -23,7 +23,7 @@ func (b *Usuario) TableName() string {
 }
 
 func GetAllUsuario(b *[]Usuario) (err error) {
-	if err = Database.DB.Find(b).Error; err != nil {
+	if err = Database.DB.Joins("Rol").Find(b).Error; err != nil {
 		return err
 	}
 	return nil

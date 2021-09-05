@@ -17,7 +17,7 @@ type Grupo_Vacunacion struct {
 	Usuario_id           int               `json:"usuario_id"`
 	Vacuna_id            int               `json:"vacuna_id"`
 	Centro_Vacunacion    Centro_Vacunacion `gorm:"foreignkey:Centro_Vacunacion_id"`
-	Usuario              Usuario           `gorm:"foreignkey:Rol_id"`
+	Usuario              Usuario           `gorm:"foreignkey:Usuario_id"`
 	Vacuna               Vacuna            `gorm:"foreignkey:Vacuna_id"`
 }
 
