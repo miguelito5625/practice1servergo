@@ -23,6 +23,7 @@ func ListVacuna(c *gin.Context) {
 func AddNewVacuna(c *gin.Context) {
 	var vacuna Models.Vacuna
 	c.BindJSON(&vacuna)
+
 	err := Models.AddNewVacuna(&vacuna)
 	if err != nil {
 		log.Println("Error on insert vacuna:", vacuna)

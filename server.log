@@ -1,24 +1,38 @@
-2021/09/05 15:38:39 
-2021/09/05 15:38:39 Servidor iniciado
+2021/09/06 21:49:12 
+2021/09/06 21:49:12 Servidor iniciado
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /rol                      --> practice1servergo/Controllers.ListRol (4 handlers)
-[GIN-debug] GET    /rol/:id                  --> practice1servergo/Controllers.GetOneRol (4 handlers)
-[GIN-debug] POST   /rol                      --> practice1servergo/Controllers.AddNewRol (4 handlers)
-[GIN-debug] PUT    /rol/:id                  --> practice1servergo/Controllers.PutOneRol (4 handlers)
-[GIN-debug] DELETE /rol/:id                  --> practice1servergo/Controllers.DeleteRol (4 handlers)
-[GIN-debug] GET    /usuario                  --> practice1servergo/Controllers.ListUsuario (4 handlers)
-[GIN-debug] GET    /usuario/:id              --> practice1servergo/Controllers.GetOneUsuario (4 handlers)
-[GIN-debug] POST   /usuario                  --> practice1servergo/Controllers.AddNewUsuario (4 handlers)
-[GIN-debug] PUT    /usuario/:id              --> practice1servergo/Controllers.PutOneUsuario (4 handlers)
-[GIN-debug] DELETE /usuario/:id              --> practice1servergo/Controllers.DeleteUsuario (4 handlers)
-[GIN-debug] GET    /                         --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /rol                      --> practice1servergo/Controllers.ListRol (5 handlers)
+[GIN-debug] GET    /rol/:id                  --> practice1servergo/Controllers.GetOneRol (5 handlers)
+[GIN-debug] POST   /rol                      --> practice1servergo/Controllers.AddNewRol (5 handlers)
+[GIN-debug] PUT    /rol/:id                  --> practice1servergo/Controllers.PutOneRol (5 handlers)
+[GIN-debug] DELETE /rol/:id                  --> practice1servergo/Controllers.DeleteRol (5 handlers)
+[GIN-debug] GET    /usuario                  --> practice1servergo/Controllers.ListUsuario (5 handlers)
+[GIN-debug] GET    /usuario/:id              --> practice1servergo/Controllers.GetOneUsuario (5 handlers)
+[GIN-debug] POST   /usuario                  --> practice1servergo/Controllers.AddNewUsuario (5 handlers)
+[GIN-debug] PUT    /usuario/:id              --> practice1servergo/Controllers.PutOneUsuario (5 handlers)
+[GIN-debug] DELETE /usuario/:id              --> practice1servergo/Controllers.DeleteUsuario (5 handlers)
+[GIN-debug] GET    /vacuna                   --> practice1servergo/Controllers.ListVacuna (5 handlers)
+[GIN-debug] GET    /vacuna/:id               --> practice1servergo/Controllers.GetOneVacuna (5 handlers)
+[GIN-debug] POST   /vacuna                   --> practice1servergo/Controllers.AddNewVacuna (5 handlers)
+[GIN-debug] PUT    /vacuna/:id               --> practice1servergo/Controllers.PutOneVacuna (5 handlers)
+[GIN-debug] DELETE /vacuna/:id               --> practice1servergo/Controllers.DeleteVacuna (5 handlers)
+[GIN-debug] GET    /centro_vacunacion        --> practice1servergo/Controllers.ListCentro_Vacunacion (5 handlers)
+[GIN-debug] GET    /centro_vacunacion/:id    --> practice1servergo/Controllers.GetOneCentro_Vacunacion (5 handlers)
+[GIN-debug] POST   /centro_vacunacion        --> practice1servergo/Controllers.AddNewCentro_Vacunacion (5 handlers)
+[GIN-debug] PUT    /centro_vacunacion/:id    --> practice1servergo/Controllers.PutOneCentro_Vacunacion (5 handlers)
+[GIN-debug] DELETE /centro_vacunacion/:id    --> practice1servergo/Controllers.DeleteCentro_Vacunacion (5 handlers)
+[GIN-debug] GET    /grupo_vacunacion         --> practice1servergo/Controllers.ListGrupo_Vacunacion (5 handlers)
+[GIN-debug] GET    /grupo_vacunacion/:id     --> practice1servergo/Controllers.GetOneGrupo_Vacunacion (5 handlers)
+[GIN-debug] POST   /grupo_vacunacion         --> practice1servergo/Controllers.AddNewGrupo_Vacunacion (5 handlers)
+[GIN-debug] PUT    /grupo_vacunacion/:id     --> practice1servergo/Controllers.PutOneGrupo_Vacunacion (5 handlers)
+[GIN-debug] DELETE /grupo_vacunacion/:id     --> practice1servergo/Controllers.DeleteGrupo_Vacunacion (5 handlers)
+[GIN-debug] GET    /                         --> main.main.func1 (4 handlers)
 [GIN-debug] Listening and serving HTTP on :3000
-2021/09/05 15:38:41 Esto es un middleware
-2021/09/05 15:38:41 Token: 
-2021/09/05 15:38:41 Success list rols
-[GIN] 2021/09/05 - 15:38:41 | 200 |    2.092558ms |             ::1 | GET      "/usuario"
+2021/09/06 21:49:20 Esto es un middleware
+2021/09/06 21:49:20 Token: 
+[GIN] 2021/09/06 - 21:49:20 | 200 |    1.600099ms |             ::1 | POST     "/vacuna"
