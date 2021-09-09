@@ -12,11 +12,11 @@ func ListVacuna(c *gin.Context) {
 	var vacuna []Models.Vacuna
 	err := Models.GetAllVacuna(&vacuna)
 	if err != nil {
-		log.Println("Error on list rols")
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		log.Println("Error on list vacunas")
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	} else {
-		log.Println("Success list rols")
-		ApiHelpers.RespondJSON(c, 200, vacuna)
+		log.Println("Success list vacunas")
+		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
 	}
 }
 
@@ -27,10 +27,10 @@ func AddNewVacuna(c *gin.Context) {
 	err := Models.AddNewVacuna(&vacuna)
 	if err != nil {
 		log.Println("Error on insert vacuna:", vacuna)
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	} else {
 		log.Println("Success inserted vacuna:", vacuna)
-		ApiHelpers.RespondJSON(c, 200, vacuna)
+		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
 	}
 }
 
@@ -39,9 +39,9 @@ func GetOneVacuna(c *gin.Context) {
 	var vacuna Models.Vacuna
 	err := Models.GetOneVacuna(&vacuna, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	} else {
-		ApiHelpers.RespondJSON(c, 200, vacuna)
+		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
 	}
 }
 
@@ -50,14 +50,14 @@ func PutOneVacuna(c *gin.Context) {
 	id := c.Params.ByName("id")
 	err := Models.GetOneVacuna(&vacuna, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	}
 	c.BindJSON(&vacuna)
 	err = Models.PutOneVacuna(&vacuna, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	} else {
-		ApiHelpers.RespondJSON(c, 200, vacuna)
+		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
 	}
 }
 
@@ -66,8 +66,8 @@ func DeleteVacuna(c *gin.Context) {
 	id := c.Params.ByName("id")
 	err := Models.DeleteVacuna(&vacuna, id)
 	if err != nil {
-		ApiHelpers.RespondJSON(c, 404, vacuna)
+		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
 	} else {
-		ApiHelpers.RespondJSON(c, 200, vacuna)
+		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
 	}
 }

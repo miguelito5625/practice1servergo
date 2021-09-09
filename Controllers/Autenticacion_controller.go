@@ -3,26 +3,36 @@ package Controllers
 import (
 	"log"
 	"practice1servergo/ApiHelpers"
+	"practice1servergo/Database/Models"
+	"practice1servergo/Interfaces"
+	"practice1servergo/Services"
 
 	"github.com/gin-gonic/gin"
 )
 
-type Credenciales struct {
-	Cui   string `json:"cui"`
-	Clave string `json:"clave"`
-}
-
 func IniciarSesion(c *gin.Context) {
-	var credenciales Credenciales
+	var credenciales Interfaces.Credenciales
 	c.BindJSON(&credenciales)
 	log.Println(credenciales)
-	ApiHelpers.RespondJSON(c, 200, credenciales)
 
-	// if err != nil {
-	// 	log.Println("Error on list rols")
-	// 	ApiHelpers.RespondJSON(c, 404, credenciales)
-	// } else {
-	// 	log.Println("Success list rols")
-	// 	ApiHelpers.RespondJSON(c, 200, credenciales)
-	// }
+	var usuario Models.Usuario
+	err := Models.LoginUsuario(&usuario, credenciales.Cui)
+	if err != nil {
+		ApiHelpers.RespondJSON(c, 404, nil, "usuario no existe")
+		return
+	}
+
+	hashClave := usuario.Clave
+	log.Println("LA CLAVE ES: ", hashClave)
+
+	claveCorrecta := Services.CheckPasswordHash(credenciales.Clave, hashClave)
+
+	if !claveCorrecta {
+		log.Println("Error autenticacion clave incorrecta")
+		ApiHelpers.RespondJSON(c, 404, nil, "Error: clave incorrecta")
+		return
+	}
+	token, _ := Services.CreateToken(credenciales)
+	ApiHelpers.RespondJSON(c, 200, token, "ok")
+
 }

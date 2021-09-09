@@ -43,6 +43,13 @@ func GetOneUsuario(b *Usuario, id string) (err error) {
 	return nil
 }
 
+func LoginUsuario(b *Usuario, cui string) (err error) {
+	if err := Database.DB.Where("cui = ?", cui).First(b).Error; err != nil {
+		return err
+	}
+	return nil
+}
+
 func PutOneUsuario(b *Usuario, id string) (err error) {
 	fmt.Println(b)
 	Database.DB.Save(b)
