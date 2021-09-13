@@ -32,7 +32,15 @@ func IniciarSesion(c *gin.Context) {
 		ApiHelpers.RespondJSON(c, 404, nil, "Error: clave incorrecta")
 		return
 	}
-	token, _ := Services.CreateToken(credenciales)
+
+	var loginData Interfaces.UserLoginData
+
+	loginData.Id = int(usuario.ID)
+	loginData.Cui = usuario.Cui
+	loginData.Name = usuario.Nombres + " " + usuario.Apeliidos
+	loginData.Rol = usuario.Rol.Rol
+
+	token, _ := Services.CreateToken(loginData)
 	ApiHelpers.RespondJSON(c, 200, token, "ok")
 
 }

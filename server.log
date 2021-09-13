@@ -1,5 +1,5 @@
-2021/09/09 17:28:01 
-2021/09/09 17:28:01 Servidor iniciado
+2021/09/12 22:09:09 
+2021/09/12 22:09:09 Servidor iniciado
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -34,3 +34,13 @@
 [GIN-debug] POST   /autenticacion/login      --> practice1servergo/Controllers.IniciarSesion (5 handlers)
 [GIN-debug] GET    /                         --> main.main.func1 (4 handlers)
 [GIN-debug] Listening and serving HTTP on :3000
+2021/09/12 22:09:11 Esto es un middleware
+2021/09/12 22:09:11 Token: 
+2021/09/12 22:09:11 {123456789 12345}
+2021/09/12 22:09:11 LA CLAVE ES:  $2a$14$1R65EDdoGk6IP8uZRzHje.zWoNFu3cxELvNhXkVJGPIPLB40a1MSC
+[GIN] 2021/09/12 - 22:09:12 | 200 |  1.202033522s |             ::1 | POST     "/autenticacion/login"
+2021/09/12 22:14:30 Esto es un middleware
+2021/09/12 22:14:30 Token: 
+2021/09/12 22:14:30 {123456789 12345}
+2021/09/12 22:14:30 LA CLAVE ES:  $2a$14$1R65EDdoGk6IP8uZRzHje.zWoNFu3cxELvNhXkVJGPIPLB40a1MSC
+[GIN] 2021/09/12 - 22:14:31 | 200 |  1.052484271s |             ::1 | POST     "/autenticacion/login"
