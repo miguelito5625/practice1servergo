@@ -9,8 +9,8 @@ import (
 type ResponseData struct {
 	Status int
 	// Meta     interface{}
-	Menssage string
-	Data     interface{}
+	Message string
+	Data    interface{}
 }
 
 func RespondJSON(w *gin.Context, status int, payload interface{}, message string) {
@@ -20,7 +20,7 @@ func RespondJSON(w *gin.Context, status int, payload interface{}, message string
 	res.Status = status
 	//res.Meta = utils.ResponseMessage(status)
 	res.Data = payload
-	res.Menssage = message
+	res.Message = message
 
 	w.JSON(status, res)
 }

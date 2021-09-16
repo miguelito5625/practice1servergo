@@ -41,6 +41,6 @@ func IniciarSesion(c *gin.Context) {
 	loginData.Rol = usuario.Rol.Rol
 
 	token, _ := Services.CreateToken(loginData)
-	ApiHelpers.RespondJSON(c, 200, token, "ok")
+	ApiHelpers.RespondJSON(c, 200, token, "Sesión Iniciada")
 
 }
