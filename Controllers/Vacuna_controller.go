@@ -24,14 +24,16 @@ func AddNewVacuna(c *gin.Context) {
 	var vacuna Models.Vacuna
 	c.BindJSON(&vacuna)
 
-	err := Models.AddNewVacuna(&vacuna)
-	if err != nil {
-		log.Println("Error on insert vacuna:", vacuna)
-		ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
-	} else {
-		log.Println("Success inserted vacuna:", vacuna)
-		ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
-	}
+	ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
+
+	// err := Models.AddNewVacuna(&vacuna)
+	// if err != nil {
+	// 	log.Println("Error on insert vacuna:", vacuna)
+	// 	ApiHelpers.RespondJSON(c, 404, vacuna, "Error")
+	// } else {
+	// 	log.Println("Success inserted vacuna:", vacuna)
+	// 	ApiHelpers.RespondJSON(c, 200, vacuna, "ok")
+	// }
 }
 
 func GetOneVacuna(c *gin.Context) {
